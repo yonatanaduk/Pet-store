@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Store.Models.Animal
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="~/css/Update.css" />
+    <title>Update</title>
+</head>
+<body>
+
+
+    <div class="">
+
+        <h1 class="animalName"> @Model.Name</h1>
+        <img class="animalPic" src="@Model.PictureSrc" />
+        <div class="inputsUpdateFild">
+            @using (Html.BeginForm("UpdateAnimal", "Admin", FormMethod.Post))
+            {
+
+                @Html.HiddenFor(model => model.AnimalId)
+                <div class="insideForm">
+                    @Html.Label("Animal Name:")
+                    @Html.TextBoxFor(model => model.Name)
+                </div>
+                <div class="insideForm">
+                    @Html.Label("Animal Age:")
+                    @Html.TextBoxFor(model => model.Age)
+                </div>
+
+                <div class="insideForm">
+                    @Html.Label("Animal Desc:")
+                    @Html.TextBoxFor(model => model.Description)
+
+                </div>
+                <div class="insideForm">
+                    @Html.Label("PicSrc:")
+                    @Html.TextBoxFor(model => model.PictureSrc)
+                </div>
+
+                <div class="insideForm">
+                    <input type="submit" value="Edit Animal" />
+                </div>
+
+            }
+        </div>
+                    <a asp-action="index" asp-controller="Admin">Back to all animal</a>
+    </div>
+
+</body>
+</html>

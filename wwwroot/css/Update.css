@@ -1,0 +1,23 @@
+﻿body {
+    background: #EEA47FFF;
+    text-align:center
+}
+.animalName {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: mediumvioletred;
+    margin: 2rem;
+    text-decoration: underline black;
+}
+.animalPic{
+    width: 17rem;
+    height: 17rem;
+}
+.inputsUpdateFild{
+    margin:2rem;
+}
+
+.insideForm{
+    margin: 0.45rem;
+    color:cornflowerblue ;
+    font-size: 2rem;
+}

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<head>
+        <link type="text/css" rel="stylesheet" href="~/css/UserAllAnimal.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AllAnimalUser</title>
+</head>
+<body>
+    <div class="text-center">
+
+        <form action="/Home/AllAnimalUser" method="post">
+
+            <fieldset>
+                
+                <select id="Category" name="Category">
+
+                    <option value="Birds">Birds</option>
+
+                    <option value="Mammal">Mammals</option>
+
+
+                    <option value="Fish">Fishes</option>
+
+                    <option value="Amphibians">Amphibians</option>
+
+
+                    <option value="reptiles">reptiles</option>
+
+                </select>
+                <p><input type="submit" value="Submit" /> </p>
+
+            </fieldset>
+
+        </form>
+
+        <h1 class="display-4">The Best Pet Shop In Town </h1>
+
+        <div class="ContainList">
+            @foreach (var animal in Model)
+            {
+                <div class="card">
+                    <div class="container">
+                        <h4><b>@animal.Name</b></h4>
+                        @foreach (var comment in animal.Comments!)
+                        {
+                            <p>@comment.Content</p>
+                        }
+                        <img src="@animal.PictureSrc" height="100" width="100" />
+                        <p><a asp-action="ShowDetailsForUser" asp-controller="Home" asp-route-id="@animal.AnimalId">Details</a></p>
+                    </div>
+                </div>
+            }
+        </div>
+        <div>
+       </div>
+        <div>
+            <a asp-action="index" asp-controller="Home">Back</a>
+
+        </div>
+    </div>
+</body>

@@ -1,0 +1,17 @@
+﻿body {
+    background: #E2D1F9;
+}
+
+.ContainList {
+    display: flex;
+    flex-wrap: wrap;
+    border: 30px;
+}
+
+.card {
+    background: #FCF6F5FF;
+    height: fit-content;
+    width: 16rem;
+    margin: 9px;
+    border-radius: 13%;
+}

@@ -1,0 +1,12 @@
+﻿body {
+    background: #FFBE7BFF;
+}
+.LiItem {
+    margin: 1.5rem;
+    list-style-type: none;
+}
+.card {
+    text-align:center;
+    background: #FCF6F5FF;
+    width: 25rem;
+}

@@ -1,0 +1,64 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<Store.Models.Animal>
+
+<head>
+
+    <link type="text/css" rel="stylesheet" href="~/css/Animal.css" />
+</head>
+<body>
+    <div class="text-center">
+
+        <form action="/Admin/Index" method="post">
+
+            <fieldset>
+                
+                <select id="Category" name="Category">
+
+                    <option value="Birds">Birds</option>
+
+                    <option value="Mammal">Mammals</option>
+
+
+                    <option value="Fish">Fishes</option>
+
+                    <option value="Amphibians">Amphibians</option>
+
+
+                    <option value="reptiles">reptiles</option>
+
+                </select>
+                <p><input type="submit" value="Submit" /> </p>
+
+            </fieldset>
+
+        </form>
+
+        <h1 class="display-4">Admin page: </h1>
+
+        <div class="ContainList">
+            @foreach (var animal in Model)
+            {
+                <div class="card">
+                    <div class="container">
+                        <h4><b>@animal.Name</b></h4>
+                        @foreach (var comment in animal.Comments!)
+                        {
+                            <p>@comment.Content</p>
+                        }
+                        <img src="@animal.PictureSrc" height="100" width="100" />
+                        <p><a asp-action="Delete" asp-route-id="@animal.AnimalId">Delete</a></p>
+                        <p><a asp-action="Update" asp-route-id="@animal.AnimalId">Updata</a></p>
+                        <p><a asp-action="Details" asp-route-id="@animal.AnimalId">Details</a></p>
+                    </div>
+                </div>
+            }
+        </div>
+        <div>
+            <a asp-action="NevigatToForm" asp-controller="Admin">Add New animal</a>
+       </div>
+        <div>
+            <a asp-action="index" asp-controller="Admin">Back</a>
+
+        </div>
+    </div>
+</body>

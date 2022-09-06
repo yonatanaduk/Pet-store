@@ -1,0 +1,46 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Store.Models.Animal
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowDetailsForUser</title>
+    <link type="text/css" rel="stylesheet" href="~/css/details.css" />
+
+</head>
+<body>
+    <div class="card">
+        <h1 class="animalName">Animal:  @Model.Name</h1>
+        <img class="animalPic" src="@Model.PictureSrc" />
+        <ul>
+            <li class="line">The age of the animal: @Model.Age</li>
+            <li class="line">Description: @Model.Description</li>
+
+        </ul>
+        <div>
+            comments:
+            @foreach (var comment in @Model.Comments!.Select(c => c.Content))
+            {
+                <p>@comment</p>
+            }
+            <form action="/Home/AddNewComment" method="post">
+                <fieldset>
+                    <ul>
+                    @Html.HiddenFor(model => model.AnimalId)
+                        <li class="LiItem">  @Html.TextBox("comment", null, new { @placeholder = "Add comment" })</li>
+                    </ul>
+                    <p><input type="submit" value="Submit" /> </p>
+                </fieldset>
+            </form>
+        </div>
+
+        <a asp-action="AllAnimalUser" asp-controller="Home">Back to all the animal</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Store.Models.Animal
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="~/css/NewAnimalt.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNew</title>
+</head>
+<body>
+    <div class="text-center">
+        <div>
+            <h3>Hey , Let's Adding :) </h3>
+        </div>
+        <div class="card">
+            <form action="/Admin/AddNew" method="post">
+                <fieldset>
+                        <div>
+                         @Html.Label("Animal Name:")
+                        <li class="LiItem">@Html.TextBoxFor(model => model.Name)</li>
+                        </div>
+                          <div>
+                         @Html.Label("Animal Age:")
+                        <li class="LiItem">@Html.TextBoxFor(model => model.Age)</li>
+                        </div>
+                          <div>
+                         @Html.Label("Animal description:")
+                        <li class="LiItem">@Html.TextBoxFor(model => model.Name)</li>
+                        </div>
+                          <div>
+                         @Html.Label("Image URL:")
+                        <li class="LiItem">@Html.TextBoxFor(model => model.PictureSrc)</li>
+                        </div>
+                        <select id="_categoryId" name="_categoryId">
+                            <option value="1">Mammals</option>
+                            <option value="2">Birds</option>
+                            <option value="3">Fishes</option>
+                            <option value="4">Amphibians</option>
+                            <option value="5">reptiles</option>
+                        </select>
+                    </ul>
+                    <p><input type="submit" value="Submit" /> </p>
+                </fieldset>
+            </form>
+        </div>
+        <div>
+            <a asp-action="index" asp-controller="Admin">Back</a>
+
+        </div>
+    </div>
+</body>
+</html>

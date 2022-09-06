@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+
+    <form action="/Admin/NevigatToAdnimPage" method="post">
+        <fieldset>
+            <ul>
+                @Html.Label("UserName:") <li class="LiItem"> @Html.TextBox("userName", null, new { @placeholder = "" })</li>
+                @Html.Label("Password:") <li class="LiItem"> @Html.TextBox("password", null, new { @placeholder = "" })</li>
+
+            </ul>
+            <p><input type="submit" value="Submit" /> </p>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿body {
+    background: #EEA47FFF;
+    display: center
+}
+.animalName {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: mediumvioletred;
+    margin: 2rem;
+    text-decoration: underline black;
+}
+
+.animalPic {
+    width: 17rem;
+    height: 17rem;
+}
+.card {
+    background: #FCF6F5FF;
+    height: fit-content;
+    width: 35rem;
+
+}
+.line{
+    margin: 7px;
+}

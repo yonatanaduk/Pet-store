@@ -1,0 +1,24 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<Store.Models.Animal>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="~/css/Home.css" />
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">The Best Pet Shop In Town </h1>
+         <div class="ContainList">
+            @foreach (var animal in Model)
+            {
+                <div class="card">
+                    <div class="container">
+                        <h4><b>@animal.Name</b></h4>
+                        <img src="@animal.PictureSrc" height="100" width="100"/>
+                    </div>
+                </div>
+            }
+        </div>
+        <h4>Want to see More Animals?</h4> 
+        <a asp-action="AllAnimalUser" asp-controller="Home">click here :)</a>
+    </div>
+</body>
